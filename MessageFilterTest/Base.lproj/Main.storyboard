@@ -1,24 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MessageFilterTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTU-OF-dnp">
+                                <rect key="frame" x="0.0" y="184" width="390" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[财务]过滤动态增删关键词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BU-Am-BHz">
+                                        <rect key="frame" x="15" y="19.666666666666657" width="203" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hh0-3I-2BX">
+                                        <rect key="frame" x="326" y="14.666666666666657" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="keywordSwitchValueDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="aR3-fg-kpi"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Hh0-3I-2BX" secondAttribute="trailing" constant="15" id="2Po-tq-6Vx"/>
+                                    <constraint firstItem="4BU-Am-BHz" firstAttribute="centerY" secondItem="vTU-OF-dnp" secondAttribute="centerY" id="91G-Vm-Cev"/>
+                                    <constraint firstItem="Hh0-3I-2BX" firstAttribute="centerY" secondItem="vTU-OF-dnp" secondAttribute="centerY" id="f0F-n2-beY"/>
+                                    <constraint firstAttribute="height" constant="60" id="psO-sB-fqL"/>
+                                    <constraint firstItem="4BU-Am-BHz" firstAttribute="leading" secondItem="vTU-OF-dnp" secondAttribute="leading" constant="15" id="zcM-B7-woY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vTU-OF-dnp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7qZ-Pp-y4v"/>
+                            <constraint firstAttribute="trailing" secondItem="vTU-OF-dnp" secondAttribute="trailing" id="9fb-2V-joA"/>
+                            <constraint firstItem="vTU-OF-dnp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="F5O-8B-s6u"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="keywordSwitch" destination="Hh0-3I-2BX" id="Qq1-cs-6Zl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-176.92307692307691" y="-24.881516587677723"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
