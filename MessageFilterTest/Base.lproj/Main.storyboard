@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21179.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gaM-A8-0ad">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21169.4"/>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="8mq-4q-iHe">
+            <objects>
+                <navigationController id="gaM-A8-0ad" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7tH-ei-q1R">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zkh-Gs-7u8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ceh-wO-rsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2239" y="-109"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,43 +32,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTU-OF-dnp">
-                                <rect key="frame" x="0.0" y="184" width="390" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JD-fz-kLi">
+                                <rect key="frame" x="0.0" y="168" width="390" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[财务]过滤动态增删关键词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BU-Am-BHz">
-                                        <rect key="frame" x="15" y="19.666666666666657" width="203" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="调整需要显示的过滤器子文件夹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKE-ol-1Rq">
+                                        <rect key="frame" x="15" y="19.666666666666657" width="365" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hh0-3I-2BX">
-                                        <rect key="frame" x="326" y="14.666666666666657" width="51" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPE-Ck-Lei">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
-                                            <action selector="keywordSwitchValueDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="aR3-fg-kpi"/>
+                                            <action selector="changeSubActionButtonDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xwe-s6-jUL"/>
                                         </connections>
-                                    </switch>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Hh0-3I-2BX" secondAttribute="trailing" constant="15" id="2Po-tq-6Vx"/>
-                                    <constraint firstItem="4BU-Am-BHz" firstAttribute="centerY" secondItem="vTU-OF-dnp" secondAttribute="centerY" id="91G-Vm-Cev"/>
-                                    <constraint firstItem="Hh0-3I-2BX" firstAttribute="centerY" secondItem="vTU-OF-dnp" secondAttribute="centerY" id="f0F-n2-beY"/>
-                                    <constraint firstAttribute="height" constant="60" id="psO-sB-fqL"/>
-                                    <constraint firstItem="4BU-Am-BHz" firstAttribute="leading" secondItem="vTU-OF-dnp" secondAttribute="leading" constant="15" id="zcM-B7-woY"/>
+                                    <constraint firstAttribute="trailing" secondItem="CKE-ol-1Rq" secondAttribute="trailing" constant="10" id="38j-qZ-LwO"/>
+                                    <constraint firstItem="tPE-Ck-Lei" firstAttribute="leading" secondItem="4JD-fz-kLi" secondAttribute="leading" id="5Fu-cq-yXJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="tPE-Ck-Lei" secondAttribute="trailing" id="82v-Qj-cvf"/>
+                                    <constraint firstItem="tPE-Ck-Lei" firstAttribute="top" secondItem="4JD-fz-kLi" secondAttribute="top" id="MPZ-sw-wwA"/>
+                                    <constraint firstItem="CKE-ol-1Rq" firstAttribute="leading" secondItem="4JD-fz-kLi" secondAttribute="leading" constant="15" id="R7S-D3-7tM"/>
+                                    <constraint firstAttribute="bottom" secondItem="tPE-Ck-Lei" secondAttribute="bottom" id="bRa-d6-sNr"/>
+                                    <constraint firstItem="CKE-ol-1Rq" firstAttribute="centerY" secondItem="4JD-fz-kLi" secondAttribute="centerY" id="iOA-4b-bLw"/>
+                                    <constraint firstAttribute="height" constant="60" id="zjL-zW-q2d"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9z-Sv-oS6">
+                                <rect key="frame" x="0.0" y="228" width="390" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="增删关键词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2j-eK-Quw">
+                                        <rect key="frame" x="15" y="19.666666666666657" width="365" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOf-lj-xV3">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="changeKeywordButtonDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qOo-gE-5PD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MOf-lj-xV3" secondAttribute="trailing" id="2Cv-6a-Tvn"/>
+                                    <constraint firstAttribute="trailing" secondItem="h2j-eK-Quw" secondAttribute="trailing" constant="10" id="Pgn-r6-MUm"/>
+                                    <constraint firstItem="MOf-lj-xV3" firstAttribute="leading" secondItem="q9z-Sv-oS6" secondAttribute="leading" id="R7d-MW-xhv"/>
+                                    <constraint firstItem="MOf-lj-xV3" firstAttribute="top" secondItem="q9z-Sv-oS6" secondAttribute="top" id="Wbk-z5-Idj"/>
+                                    <constraint firstAttribute="bottom" secondItem="MOf-lj-xV3" secondAttribute="bottom" id="g8J-Mg-Cyu"/>
+                                    <constraint firstItem="h2j-eK-Quw" firstAttribute="centerY" secondItem="q9z-Sv-oS6" secondAttribute="centerY" id="h6L-3S-6pC"/>
+                                    <constraint firstAttribute="height" constant="60" id="uPF-Ob-iUP"/>
+                                    <constraint firstItem="h2j-eK-Quw" firstAttribute="leading" secondItem="q9z-Sv-oS6" secondAttribute="leading" constant="15" id="x1J-oo-qDN"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vTU-OF-dnp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7qZ-Pp-y4v"/>
-                            <constraint firstAttribute="trailing" secondItem="vTU-OF-dnp" secondAttribute="trailing" id="9fb-2V-joA"/>
-                            <constraint firstItem="vTU-OF-dnp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="140" id="F5O-8B-s6u"/>
+                            <constraint firstAttribute="trailing" secondItem="q9z-Sv-oS6" secondAttribute="trailing" id="DsG-mh-C9L"/>
+                            <constraint firstItem="q9z-Sv-oS6" firstAttribute="top" secondItem="4JD-fz-kLi" secondAttribute="bottom" id="KbW-6t-yqg"/>
+                            <constraint firstItem="q9z-Sv-oS6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R0r-E1-Y5B"/>
+                            <constraint firstItem="4JD-fz-kLi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="fQf-ed-LT9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4JD-fz-kLi" secondAttribute="trailing" id="kDh-wx-Ec3"/>
+                            <constraint firstItem="4JD-fz-kLi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oDo-05-8GY"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="keywordSwitch" destination="Hh0-3I-2BX" id="Qq1-cs-6Zl"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="6Ht-Mn-va4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

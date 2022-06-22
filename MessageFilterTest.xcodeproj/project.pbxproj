@@ -17,6 +17,13 @@
 		5B469137285E34A300E6948B /* MsgEx.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5B469130285E34A300E6948B /* MsgEx.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5B46913F285EBB1F00E6948B /* AppGroupUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B46913E285EBB1F00E6948B /* AppGroupUserDefault.swift */; };
 		5B469140285EBB3600E6948B /* AppGroupUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B46913E285EBB1F00E6948B /* AppGroupUserDefault.swift */; };
+		5BCA9E5A2860035200AA66E9 /* CapabilitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA9E592860035200AA66E9 /* CapabilitiesTableViewController.swift */; };
+		5BCA9E5C286058B400AA66E9 /* ConstantName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA9E5B286058B400AA66E9 /* ConstantName.swift */; };
+		5BCA9E5D286058CD00AA66E9 /* ConstantName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA9E5B286058B400AA66E9 /* ConstantName.swift */; };
+		5BCA9E5F2861506400AA66E9 /* KeywordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA9E5E2861506400AA66E9 /* KeywordTableViewController.swift */; };
+		5BCA9E62286151BD00AA66E9 /* KeywordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA9E61286151BD00AA66E9 /* KeywordListTableViewController.swift */; };
+		5BCA9E64286152AF00AA66E9 /* KeywordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA9E63286152AF00AA66E9 /* KeywordManager.swift */; };
+		5BCA9E652861596500AA66E9 /* KeywordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCA9E63286152AF00AA66E9 /* KeywordManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,11 @@
 		5B46913C285EB27B00E6948B /* MsgEx.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MsgEx.entitlements; sourceTree = "<group>"; };
 		5B46913D285EB28E00E6948B /* MessageFilterTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageFilterTest.entitlements; sourceTree = "<group>"; };
 		5B46913E285EBB1F00E6948B /* AppGroupUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupUserDefault.swift; sourceTree = "<group>"; };
+		5BCA9E592860035200AA66E9 /* CapabilitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilitiesTableViewController.swift; sourceTree = "<group>"; };
+		5BCA9E5B286058B400AA66E9 /* ConstantName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantName.swift; sourceTree = "<group>"; };
+		5BCA9E5E2861506400AA66E9 /* KeywordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordTableViewController.swift; sourceTree = "<group>"; };
+		5BCA9E61286151BD00AA66E9 /* KeywordListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListTableViewController.swift; sourceTree = "<group>"; };
+		5BCA9E63286152AF00AA66E9 /* KeywordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +111,14 @@
 		5B469117285E342E00E6948B /* MessageFilterTest */ = {
 			isa = PBXGroup;
 			children = (
+				5BCA9E602861506A00AA66E9 /* Keyword */,
+				5BCA9E58286002EF00AA66E9 /* CapabilitiesSubAction */,
 				5B46913D285EB28E00E6948B /* MessageFilterTest.entitlements */,
 				5B469118285E342E00E6948B /* AppDelegate.swift */,
 				5B46911A285E342E00E6948B /* SceneDelegate.swift */,
 				5B46911C285E342E00E6948B /* ViewController.swift */,
 				5B46913E285EBB1F00E6948B /* AppGroupUserDefault.swift */,
+				5BCA9E5B286058B400AA66E9 /* ConstantName.swift */,
 				5B46911E285E342E00E6948B /* Main.storyboard */,
 				5B469121285E343100E6948B /* Assets.xcassets */,
 				5B469123285E343100E6948B /* LaunchScreen.storyboard */,
@@ -120,6 +135,24 @@
 				5B469134285E34A300E6948B /* Info.plist */,
 			);
 			path = MsgEx;
+			sourceTree = "<group>";
+		};
+		5BCA9E58286002EF00AA66E9 /* CapabilitiesSubAction */ = {
+			isa = PBXGroup;
+			children = (
+				5BCA9E592860035200AA66E9 /* CapabilitiesTableViewController.swift */,
+			);
+			path = CapabilitiesSubAction;
+			sourceTree = "<group>";
+		};
+		5BCA9E602861506A00AA66E9 /* Keyword */ = {
+			isa = PBXGroup;
+			children = (
+				5BCA9E5E2861506400AA66E9 /* KeywordTableViewController.swift */,
+				5BCA9E61286151BD00AA66E9 /* KeywordListTableViewController.swift */,
+				5BCA9E63286152AF00AA66E9 /* KeywordManager.swift */,
+			);
+			path = Keyword;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,10 +256,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCA9E5F2861506400AA66E9 /* KeywordTableViewController.swift in Sources */,
 				5B46911D285E342E00E6948B /* ViewController.swift in Sources */,
 				5B469119285E342E00E6948B /* AppDelegate.swift in Sources */,
+				5BCA9E5A2860035200AA66E9 /* CapabilitiesTableViewController.swift in Sources */,
 				5B46913F285EBB1F00E6948B /* AppGroupUserDefault.swift in Sources */,
+				5BCA9E5C286058B400AA66E9 /* ConstantName.swift in Sources */,
 				5B46911B285E342E00E6948B /* SceneDelegate.swift in Sources */,
+				5BCA9E64286152AF00AA66E9 /* KeywordManager.swift in Sources */,
+				5BCA9E62286151BD00AA66E9 /* KeywordListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B469140285EBB3600E6948B /* AppGroupUserDefault.swift in Sources */,
+				5BCA9E5D286058CD00AA66E9 /* ConstantName.swift in Sources */,
 				5B469133285E34A300E6948B /* MessageFilterExtension.swift in Sources */,
+				5BCA9E652861596500AA66E9 /* KeywordManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +436,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MessageFilterTest/Info.plist;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "访问域名";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -428,6 +469,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MessageFilterTest/Info.plist;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "访问域名";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

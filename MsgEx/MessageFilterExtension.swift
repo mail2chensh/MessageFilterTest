@@ -18,11 +18,21 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling, ILMessageFilterC
         //
         let response = ILMessageFilterCapabilitiesQueryResponse()
         //
-        response.transactionalSubActions = [.transactionalFinance,
-                                            .transactionalOrders,
-                                            .transactionalWeather]
-        response.promotionalSubActions = [.promotionalCoupons,
-                                          .promotionalOffers]
+        var transactionArray: [ILMessageFilterSubAction] = []
+        var promotionalArray: [ILMessageFilterSubAction] = []
+        //
+        if let array: [Int] = AppGroupUserDefault.widget.standard.array(forKey: Capabilities_Key_Str) as? [Int] {
+            for item in array {
+                if item >= ILMessageFilterSubAction.promotionalOthers.rawValue {
+                    promotionalArray.append(ILMessageFilterSubAction.init(rawValue: item) ?? .none)
+                } else {
+                    transactionArray.append(ILMessageFilterSubAction.init(rawValue: item) ?? .none)
+                }
+            }
+        }
+        //
+        response.transactionalSubActions = transactionArray
+        response.promotionalSubActions = promotionalArray
         //
         completion(response)
     }
@@ -70,29 +80,15 @@ extension MessageFilterExtension: ILMessageFilterQueryHandling, ILMessageFilterC
         guard let message = queryRequest.messageBody else {
             return (.none, .none)
         }
-        
-        // 此处为演示动态增删关键词（规则），通过 App Group 实现数据共享
-        if let keywordArr: [String] = AppGroupUserDefault.widget.standard.stringArray(forKey: "transactionalKeywordArray") {
-            for item in keywordArr {
-                if message.contains(item) {
-                    return (.transaction, .transactionalFinance)
-                }
-            }
-        }
-        
         //
-        switch (message) {
-        case _ where message.contains("京东"):
-            return (.transaction, .transactionalFinance)
-        case _ where message.contains("天气"):
-            return (.transaction, .transactionalWeather)
-        default:
-            return (.none, .none)
-        }
+        let result = KeywordManager.shared.isMatchKeyword(content: message)
+        return result
     }
 
     private func networkAction(for networkResponse: ILNetworkResponse) -> (ILMessageFilterAction, ILMessageFilterSubAction) {
         // TODO: Replace with logic to parse the HTTP response and data payload of `networkResponse` to return an action.
+        // networkResponse 对象的 data 属性，可以转为 String 类型或者 Dictionary 类型
+        // 这个主要看客户端跟后端对于数据结构表达如何协商。
         return (.none, .none)
     }
 
